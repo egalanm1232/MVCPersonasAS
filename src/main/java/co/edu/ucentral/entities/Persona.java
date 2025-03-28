@@ -1,31 +1,27 @@
 package co.edu.ucentral.entities;
 
 import java.io.Serializable;
-import javax.persistence.*;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
-@Table(name="persona")
+@Table(name = "persona")
 public class Persona implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "idPersona")
     private Long idPersona;
-    
-    @Column(name = "nombre")
+
     private String nombre;
-    
-    @Column(name = "apellido")
     private String apellido;
-    
-    @Column(name = "email")
     private String email;
-    
-    @Column(name = "telefono")
     private String telefono;
 
     // Getters y Setters
-
     public Long getIdPersona() {
         return idPersona;
     }
